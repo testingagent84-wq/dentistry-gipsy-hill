@@ -7,7 +7,7 @@
 <meta name="robots" content="noindex">
 <style>
 :root{
-  --paper:#F7F4ED; --ink:#2E2A24; --dim:rgba(46,42,36,.55); --line:rgba(46,42,36,.15);
+  --paper:#F7F4ED; --ink:#2E2A24; --dim:rgba(46,42,36,.75); --line:rgba(46,42,36,.2);
   --sage:#6E7863; --sagedeep:#3C4234; --gold:#A6885A; --cream:#F2EEE4;
   --serif:"Cormorant",serif; --script:"WindSong",cursive;
   --body:"Cormorant",serif; --sans:"Montserrat",sans-serif;
@@ -15,24 +15,18 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--paper);color:var(--ink);font-family:var(--body);font-weight:400;
-  font-size:18.5px;line-height:1.75;overflow-x:hidden}
+  font-size:19px;line-height:1.75;overflow-x:hidden}
 ::selection{background:var(--gold);color:var(--paper)}
 img{display:block;width:100%;height:100%;object-fit:cover}
 a{color:inherit;text-decoration:none}
-.serif{font-family:var(--serif);font-weight:300;line-height:1.12}
+.serif{font-family:var(--serif);font-weight:400;line-height:1.12}
 .script{font-family:var(--script);font-weight:400;line-height:1}
-.lbl{font-family:var(--body);font-style:italic;font-weight:300;font-size:19px;color:var(--dim);letter-spacing:.03em}
-.caps{font-family:var(--sans);font-weight:300;font-size:10.5px;letter-spacing:.42em;text-transform:uppercase}
+.lbl{font-family:var(--body);font-style:italic;font-weight:400;font-size:20px;color:var(--ink);letter-spacing:.03em}
+.caps{font-family:var(--sans);font-weight:400;font-size:11px;letter-spacing:.42em;text-transform:uppercase}
 
-.ubtn{display:inline-block;font-family:var(--sans);font-weight:300;font-size:10.5px;
-  letter-spacing:.38em;text-transform:uppercase;padding-bottom:5px;position:relative;cursor:pointer;
-  background:none;border:none;color:inherit}
-.ubtn::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;
-  transform-origin:left;transition:transform .5s cubic-bezier(.76,0,.24,1)}
-.ubtn:hover::after{transform:scaleX(.35)}
-.rbtn{display:inline-flex;align-items:center;gap:16px;font-family:var(--sans);font-weight:300;
-  font-size:10.5px;letter-spacing:.38em;text-transform:uppercase;color:var(--ink);
-  border:1px solid rgba(46,42,36,.4);padding:18px 38px;background:transparent;cursor:pointer;
+.rbtn{display:inline-flex;align-items:center;gap:16px;font-family:var(--sans);font-weight:400;
+  font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:var(--ink);
+  border:1px solid rgba(46,42,36,.5);padding:18px 38px;background:transparent;cursor:pointer;
   position:relative;overflow:hidden;transition:color .45s}
 .rbtn::before{content:"";position:absolute;inset:0;background:var(--ink);
   transform:translateY(101%);transition:transform .55s cubic-bezier(.76,0,.24,1)}
@@ -41,168 +35,103 @@ a{color:inherit;text-decoration:none}
 .rbtn span{position:relative;z-index:1}
 .rbtn .ar{transition:transform .45s}
 .rbtn:hover .ar{transform:translateX(5px)}
-.rbtn.lite{color:var(--cream);border-color:rgba(242,238,228,.7)}
+.rbtn.lite{color:var(--cream);border-color:rgba(242,238,228,.8)}
 .rbtn.lite::before{background:var(--cream)}
 .rbtn.lite:hover{color:var(--sagedeep)}
 
 /* NAV */
 .navbar{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;justify-content:space-between;
-  align-items:center;padding:20px var(--gap);opacity:1}
-.navbar::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--paper);
-  box-shadow:0 1px 0 var(--line);transform:translateY(-101%);
-  transition:transform .55s cubic-bezier(.76,0,.24,1)}
-.navbar.scrolled::before{transform:none}
-.navbar .mono{font-family:var(--serif);font-weight:300;font-size:21px;letter-spacing:.24em}
+  align-items:center;padding:20px var(--gap);background:var(--paper);box-shadow:0 1px 0 var(--line)}
+.navbar .mono{font-family:var(--serif);font-weight:400;font-size:22px;letter-spacing:.24em}
 .navbar .mono .amp{color:var(--gold);font-style:italic}
 .nav-links{display:flex;gap:clamp(18px,3vw,42px)}
-.nav-links a{font-style:italic;font-size:17.5px;font-weight:300;color:var(--dim);padding-bottom:3px;
-  background-image:linear-gradient(var(--ink),var(--ink));background-repeat:no-repeat;
-  background-size:0% 1px;background-position:0 100%;transition:background-size .5s cubic-bezier(.76,0,.24,1),color .4s}
-.nav-links a:hover{background-size:100% 1px;color:var(--ink)}
+.nav-links a{font-style:italic;font-size:18px;font-weight:400;color:var(--ink)}
 
 /* HERO */
 .hero{min-height:100svh;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;
   gap:clamp(30px,5vw,90px);padding:clamp(90px,14vh,150px) var(--gap) clamp(40px,6vh,80px);
   max-width:1500px;margin:0 auto}
-.hero-names{font-weight:300;font-size:clamp(40px,5.5vw,95px);text-transform:uppercase;letter-spacing:.12em;margin-right:-.12em}
-.hero-names .hl{display:block;overflow:hidden}
-.hero-names .hl>span{display:block;transform:none}
+.hero-names{font-weight:400;font-size:clamp(40px,5.5vw,95px);text-transform:uppercase;letter-spacing:.12em}
 .hero-amp{display:block;font-family:var(--script);font-size:clamp(40px,4vw,70px);
-  color:var(--gold);text-transform:none;margin:clamp(2px,.6vw,10px) 0 clamp(2px,.6vw,10px) clamp(40px,5vw,100px);opacity:1}
-.hero-meta{margin-top:clamp(28px,3.4vw,52px);opacity:1}
-.hero-meta .caps{display:block;color:var(--ink);margin-bottom:12px}
+  color:var(--gold);text-transform:none;margin:10px 0 10px 40px}
+.hero-meta{margin-top:30px}
+.hero-meta .caps{display:block;color:var(--ink);margin-bottom:12px;font-weight:600}
 .hero-meta .lbl{display:block}
 .hero-fig{position:relative;height:min(78vh,760px);align-self:center}
-.hero-arch{position:absolute;inset:0;overflow:hidden;border-radius:999px 999px 0 0;clip-path:none}
-.hero-arch img{will-change:transform;transform:scale(1)}
-.hero-fig .cap{position:absolute;bottom:-34px;left:4px;font-style:italic;font-size:14.5px;color:var(--dim);opacity:1}
+.hero-arch{position:absolute;inset:0;overflow:hidden;border-radius:999px 999px 0 0}
+.hero-fig .cap{position:absolute;bottom:-34px;left:4px;font-style:italic;font-size:15px;color:var(--ink)}
 
 /* STATEMENT */
-.statement{padding:clamp(120px,14vw,210px) var(--gap);text-align:center}
+.statement{padding:120px var(--gap);text-align:center}
 .statement .lead{display:block;margin-bottom:28px}
-.statement h2{font-family:var(--serif);font-weight:300;font-size:clamp(28px,3.2vw,50px);line-height:1.4;
+.statement h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3.2vw,50px);line-height:1.4;
   max-width:26ch;margin:0 auto 38px}
-.statement .caps{display:block;color:var(--dim);line-height:2.2}
+.statement .caps{display:block;color:var(--ink);line-height:2.2;font-weight:600}
 .statement .flourish{font-family:var(--script);font-size:46px;color:var(--gold);margin-top:40px}
 
 /* SERVICES */
-.day{padding:clamp(90px,10vw,150px) var(--gap);border-top:1px solid var(--line)}
-.sec-head{margin-bottom:clamp(30px,3.6vw,50px)}
+.day{padding:100px var(--gap);border-top:1px solid var(--line)}
+.sec-head{margin-bottom:50px}
 .sec-head .lbl{display:block;margin-bottom:14px}
-.sec-head h2{font-family:var(--serif);font-weight:300;font-size:clamp(26px,2.8vw,42px);text-transform:uppercase;letter-spacing:.2em;margin-right:-.2em}
-.day .sec-head{text-align:center;margin-bottom:clamp(50px,6vw,90px)}
-.day-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(36px,6vw,100px);
-  align-items:start;max-width:1500px;margin:0 auto}
+.sec-head h2{font-family:var(--serif);font-weight:400;font-size:36px;text-transform:uppercase;letter-spacing:.2em}
+.day .sec-head{text-align:center;margin-bottom:70px}
+.day-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:60px;align-items:start;max-width:1500px;margin:0 auto}
 .day-fig{position:sticky;top:11vh;height:min(74vh,690px)}
 .day-arch{position:absolute;inset:0;overflow:hidden;border-radius:999px 999px 0 0}
-.day-arch img{position:absolute;inset:0;opacity:1;will-change:transform}
-.day-fig .cap{position:absolute;bottom:-32px;left:6px;font-style:italic;font-size:15px;color:var(--dim)}
-.program{position:relative;max-width:640px;margin:0 auto;padding-top:6px}
-.program::before{content:"";position:absolute;left:3px;top:12px;bottom:12px;width:1px;background:var(--line)}
-.ev{position:relative;padding:0 0 clamp(36px,4.4vw,58px) clamp(34px,3.6vw,54px)}
-.ev:last-child{padding-bottom:6px}
+.program{max-width:640px;margin:0 auto}
+.ev{position:relative;padding:0 0 45px 45px}
 .ev .dot{position:absolute;left:0;top:13px;width:7px;height:7px;border-radius:50%;background:var(--gold)}
-.tl-time{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(17px,1.4vw,21px);color:var(--gold);
-  letter-spacing:.14em;margin-bottom:6px}
-.tl-name{font-family:var(--serif);font-weight:400;font-size:clamp(21px,1.9vw,27px);letter-spacing:.04em}
-.tl-note{font-style:italic;color:var(--dim);font-size:17px;margin-top:4px}
-  /* BREATHER */
-.breather{padding:clamp(90px,11vw,170px) var(--gap) clamp(150px,16vw,250px);position:relative}
-.breather-inner{position:relative;max-width:1500px;margin:0 auto;height:clamp(420px,64vh,660px)}
-.bf1{position:absolute;top:0;left:0;width:62%;height:100%;overflow:hidden;clip-path:none}
-.bf2{position:absolute;top:14%;right:6%;width:30%;aspect-ratio:3/4;overflow:hidden;
-  box-shadow:0 26px 64px rgba(30,26,20,.28);clip-path:none}
-.breather .note{position:absolute;bottom:calc(-1*clamp(70px,7vw,110px));right:38%;font-family:var(--script);
-  font-size:clamp(34px,3.6vw,56px);color:var(--ink);transform:rotate(-3deg)}
-
-/* LOCATION */
-.travel{background:var(--sagedeep);color:var(--cream);padding:clamp(100px,12vw,180px) var(--gap)}
+.tl-time{display:block;font-family:var(--serif);font-size:20px;color:var(--gold);letter-spacing:.14em;margin-bottom:6px}
+.tl-name{font-family:var(--serif);font-size:26px;font-weight:600}
+.tl-note{font-style:italic;color:var(--dim);font-size:18px;margin-top:4px}
+  /* LOCATION */
+.travel{background:var(--sagedeep);color:var(--cream);padding:120px var(--gap)}
 .travel-inner{max-width:1500px;margin:0 auto}
-.travel .lbl{color:rgba(242,238,228,.6)}
-.travel h2{font-family:var(--serif);font-weight:300;font-size:clamp(26px,4.4vw,64px);margin-bottom:26px;text-transform:uppercase;letter-spacing:.14em;line-height:1.2;white-space:nowrap}
-.travel-head{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,5vw,90px);align-items:end}
-.travel .addr{font-style:italic;color:rgba(242,238,228,.75);margin-bottom:18px;font-size:19px}
-.travel-intro{color:rgba(242,238,228,.75);font-weight:300;font-size:18px}
-.travel-head .rbtn{justify-self:end;margin-bottom:4px}
-.travel-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(28px,4vw,70px);
-  margin-top:clamp(44px,5.4vw,80px);border-top:1px solid rgba(242,238,228,.18);padding-top:clamp(36px,4.4vw,64px)}
-.travel-cols h3{font-family:var(--serif);font-weight:400;font-size:23px;margin-bottom:14px;letter-spacing:.03em}
-.travel-cols p{color:rgba(242,238,228,.75);font-size:17.5px;line-height:1.85;font-weight:300}
-.travel-cols .lbl{display:block;margin-bottom:8px}
+.travel .lbl{color:rgba(242,238,228,.8)}
+.travel h2{font-family:var(--serif);font-weight:400;font-size:50px;margin-bottom:26px;text-transform:uppercase;letter-spacing:.14em}
+.travel-head{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:end}
+.travel .addr{font-style:italic;color:rgba(242,238,228,.9);margin-bottom:18px;font-size:20px}
+.travel-intro{color:rgba(242,238,228,.85);font-size:18px}
+.travel-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:50px;margin-top:70px;border-top:1px solid rgba(242,238,228,.2);padding-top:50px}
+.travel-cols h3{font-family:var(--serif);font-size:24px;margin-bottom:14px}
+.travel-cols p{color:rgba(242,238,228,.85);font-size:18px}
 
-/* REVIEWS */
-.reviews-section{padding:clamp(90px,10vw,150px) var(--gap);background:rgba(242,238,228,0.5);border-top:1px solid var(--line);text-align:center}
-.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:30px;max-width:1200px;margin:40px auto 50px}
+/* REVIEWS & DYNAMIC FORM */
+.reviews-section{padding:100px var(--gap);background:rgba(242,238,228,0.5);border-top:1px solid var(--line);text-align:center}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:30px;max-width:1200px;margin:40px auto}
 .review-card{background:var(--paper);padding:35px 30px;border-radius:12px;box-shadow:0 10px 30px rgba(46,42,36,0.06);text-align:left;border:1px solid var(--line)}
-.review-card p{font-style:italic;color:var(--dim);font-size:17px;margin-bottom:20px}
-.review-card h4{font-family:var(--serif);font-weight:400;font-size:20px;color:var(--ink);margin:0}
-.review-stars{color:var(--gold);font-size:16px;margin-top:4px}
-.review-action{margin-top:30px}
+.review-card p{font-style:italic;color:var(--ink);font-size:18px;margin-bottom:20px}
+.review-card h4{font-family:var(--serif);font-size:22px;color:var(--ink);margin:0}
+.review-stars{color:var(--gold);font-size:18px;margin-top:4px}
+
+.review-form-box{max-width:600px;margin:50px auto 0;background:var(--paper);padding:40px;border-radius:12px;border:1px solid var(--line);text-align:left}
+.review-form-box h3{font-family:var(--serif);font-size:26px;margin-bottom:20px;text-align:center}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-size:14px;font-family:var(--sans);text-transform:uppercase;letter-spacing:2px;margin-bottom:8px}
+.form-group input, .form-group textarea{width:100%;padding:14px;border:1px solid var(--line);background:var(--cream);font-family:inherit;font-size:16px;border-radius:4px}
+.form-group textarea{height:100px;resize:vertical}
 
 /* FAQ */
-.faq{padding:clamp(90px,10vw,150px) var(--gap)}
+.faq{padding:100px var(--gap)}
 .faq-inner{max-width:820px;margin:0 auto}
 .faq details{border-bottom:1px solid var(--line)}
-.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;
-  align-items:baseline;padding:clamp(20px,2.4vw,30px) 0;font-family:var(--serif);font-weight:400;
-  font-size:clamp(20px,1.8vw,25px);letter-spacing:.03em}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary .tick{font-family:var(--body);font-style:italic;color:var(--gold);font-size:17px;
-  transition:transform .4s;flex:0 0 auto}
-.faq details[open] summary .tick{transform:rotate(45deg)}
-.faq details p{padding:0 0 26px;color:var(--dim);font-size:17.5px}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding:25px 0;font-family:var(--serif);font-size:24px}
+.faq details p{padding:0 0 25px;color:var(--dim);font-size:18px}
 
 /* FOOTER */
-.footer{padding:clamp(80px,9vw,140px) var(--gap) 0;border-top:1px solid var(--line);
-  text-align:center;overflow:hidden}
-.footer .caps{color:var(--dim)}
-.footer-word{font-family:var(--serif);font-weight:300;text-transform:uppercase;
-  letter-spacing:.14em;white-space:nowrap;line-height:1.1;
-  margin:clamp(40px,5vw,80px) 0 clamp(30px,4vw,60px)}
-.footer-word .amp{color:var(--gold);font-style:italic;text-transform:none}
-.byline{display:flex;justify-content:space-between;gap:12px;padding:18px 0;
-  border-top:1px solid var(--line);font-family:var(--sans);font-weight:300;font-size:10px;
-  letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
-
-/* FORCE VISIBILITY FIX */
-.reveal, .stagger>*{opacity:1!important;transform:none!important}
+.footer{padding:80px var(--gap);border-top:1px solid var(--line);text-align:center}
+.footer-word{font-family:var(--serif);font-size:60px;text-transform:uppercase;letter-spacing:.14em;margin:40px 0}
+.footer-word .amp{color:var(--gold);font-style:italic}
+.byline{display:flex;justify-content:space-between;padding-top:20px;border-top:1px solid var(--line);font-size:11px;text-transform:uppercase;letter-spacing:2px}
 
 @media (max-width:900px){
-  .nav-links{gap:16px}
-  .nav-links a{font-size:14.5px}
-  .hero{grid-template-columns:1fr;padding-top:clamp(96px,14vh,160px);gap:26px;min-height:0}
-  .hero>div:first-child{text-align:center}
-  .hero-names{font-size:clamp(32px,8vw,54px);letter-spacing:.1em;margin-right:0}
-  .hero-amp{margin-left:auto;margin-right:auto}
-  .hero-meta .caps{margin-right:-.42em}
-  .hero-fig{height:auto;width:100%}
-  .hero-arch{position:relative;aspect-ratio:3/4;max-height:66vh}
-  .hero-fig .cap{position:static;margin-top:12px;display:block}
+  .hero{grid-template-columns:1fr;padding-top:120px}
   .day-grid{display:block}
-  .day-fig{position:static;height:auto;margin:0}
-  .day-arch{position:relative;inset:auto;aspect-ratio:3/4;max-height:none;margin:0 auto}
-  .day-fig .cap{position:static;display:block;margin:16px 0 56px;text-align:center}
-  .program{max-width:none;padding-top:0}
-  .program::before{display:none}
-  .ev{padding:0 0 30px;text-align:center}
-  .ev:last-child{padding-bottom:0}
-  .ev .dot{position:static;display:block;margin:0 auto 14px}
-  .ev::before{content:"";display:block;width:1px;height:34px;background:var(--line);margin:0 auto 22px}
-  .ev:first-child::before{display:none}
-  .breather-inner{height:auto}
-  .bf1{position:relative;width:100%;height:auto;aspect-ratio:4/3}
-  .bf2{top:auto;bottom:-30px;right:4%;width:42%}
-  .breather .note{bottom:-96px;right:auto;left:4%}
-  .breather{padding-bottom:150px}
-  .travel h2{white-space:normal}
-  .travel-head{grid-template-columns:1fr}
-  .travel-head .rbtn{justify-self:start}
-  .travel-cols{grid-template-columns:1fr;gap:34px}
+  .travel-head, .travel-cols{grid-template-columns:1fr}
 }
 </style>
-<link rel="stylesheet" href="fonts.css" />
 </head>
-<body class="loaded">
+<body>
 
 <nav class="navbar">
   <a class="mono" href="#top">Gipsy <span class="amp">&amp;</span> Hill</a>
@@ -216,11 +145,9 @@ a{color:inherit;text-decoration:none}
 
 <header class="hero" id="top">
   <div>
-    <h1 class="serif hero-names">
-      <span class="hl"><span>Dentistry On</span></span>
-      <span class="hero-amp">Gipsy Hill</span>
-      <span class="hl"><span>Dental Practice</span></span>
-    </h1>
+    <h1 class="serif hero-names">Dentistry On</h1>
+    <span class="hero-amp">Gipsy Hill</span>
+    <h1 class="serif hero-names" style="font-size:clamp(30px,4vw,65px);">Dental Practice</h1>
     <div class="hero-meta">
       <span class="caps">Advanced Dental Care &nbsp;&#183;&nbsp; Open 24/7 with AI Assistance</span>
       <span class="lbl">Instant Appointments &amp; Consultations</span>
@@ -243,8 +170,7 @@ a{color:inherit;text-decoration:none}
 <section class="statement">
   <span class="lbl lead">Welcome to our clinic</span>
   <h2>Your smile, our passion and priority</h2>
-  <span class="caps">Professional treatments, expert dentists &amp; instant booking support<br>
-  Available round the clock for your dental needs</span>
+  <span class="caps">Professional treatments, expert dentists &amp; instant booking support<br>Available round the clock for your dental needs</span>
   <div class="flourish">G &amp; H</div>
 </section>
 
@@ -255,10 +181,8 @@ a{color:inherit;text-decoration:none}
   </div>
   <div class="day-grid">
     <figure class="day-fig">
-      <div class="day-arch">
-        <img src="img/aisle.jpg" alt="Dental Care">
-      </div>
-      <figcaption class="cap">Modern clinical environment</figcaption>
+      <div class="day-arch"><img src="img/aisle.jpg" alt="Dental Care"></div>
+      <figcaption class="cap" style="margin-top:15px; font-style:italic;">Modern clinical environment</figcaption>
     </figure>
     <div class="program">
       <div class="ev"><span class="dot"></span><span class="tl-time">01</span><div class="tl-name">General Consultation</div><div class="tl-note">Routine check-ups, cleanings, and preventative care</div></div>
@@ -271,14 +195,6 @@ a{color:inherit;text-decoration:none}
   </div>
 </section>
 
-<section class="breather">
-  <div class="breather-inner">
-    <div class="bf1"><img src="img/beach.jpg" alt="Clinic Interior"></div>
-    <div class="bf2"><img src="img/hands.jpg" alt="Patient Care"></div>
-    <span class="note">healthy smiles</span>
-  </div>
-</section>
-
 <section class="travel" id="travel">
   <div class="travel-inner">
     <span class="lbl">Location &amp; Visiting</span>
@@ -288,7 +204,7 @@ a{color:inherit;text-decoration:none}
         <p class="addr">Gipsy Hill, London / Professional Medical District</p>
         <p class="travel-intro">Easily accessible with parking facilities nearby. Speak with our AI receptionist anytime to get directions or verify appointment slots.</p>
       </div>
-      <a class="rbtn lite" href="https://maps.google.com" target="_blank" rel="noopener"><span>Open the map</span><span class="ar">&#8594;</span></a>
+      <a class="rbtn lite" href="https://maps.google.com/?q=Gipsy+Hill+London" target="_blank" rel="noopener"><span>Open Clinic Map</span><span class="ar">&#8594;</span></a>
     </div>
     <div class="travel-cols">
       <div>
@@ -317,7 +233,7 @@ a{color:inherit;text-decoration:none}
   </div>
   <p style="color: var(--dim); margin-bottom: 40px; font-style: italic;">Read authentic feedback from our patients regarding our AI booking and dental care.</p>
   
-  <div class="reviews-grid">
+  <div class="reviews-grid" id="reviewsList">
     <div class="review-card">
       <p>"The AI voice receptionist booked my appointment in seconds without any hassle. Amazing dental service!"</p>
       <h4>Sarah Jenkins</h4>
@@ -335,11 +251,22 @@ a{color:inherit;text-decoration:none}
     </div>
   </div>
 
-  <div class="review-action">
-    <a href="https://forms.google.com" target="_blank" rel="noopener" class="rbtn">
-      <span>Leave a Review</span>
-      <span class="ar">&#8594;</span>
-    </a>
+  <div class="review-form-box">
+    <h3>Leave Your Review</h3>
+    <form id="userReviewForm" onsubmit="submitReview(event)">
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" id="reviewerName" placeholder="e.g. John Doe" required>
+      </div>
+      <div class="form-group">
+        <label>Your Review</label>
+        <textarea id="reviewerText" placeholder="Write your experience here..." required></textarea>
+      </div>
+      <button type="submit" class="rbtn" style="width:100%; justify-content:center;">
+        <span>Submit Review</span>
+        <span class="ar">&#8594;</span>
+      </button>
+    </form>
   </div>
 </section>
 
@@ -350,15 +277,15 @@ a{color:inherit;text-decoration:none}
       <h2>Frequently Asked Questions</h2>
     </div>
     <details>
-      <summary>How can I book an appointment?<span class="tick">+</span></summary>
+      <summary>How can I book an appointment? <span style="color:var(--gold)">+</span></summary>
       <p>You can use our 24/7 AI voice receptionist widget on this page or call our direct line to schedule your visit instantly.</p>
     </details>
     <details>
-      <summary>Do you accept emergency cases?<span class="tick">+</span></summary>
+      <summary>Do you accept emergency cases? <span style="color:var(--gold)">+</span></summary>
       <p>Yes, we provide priority emergency scheduling. Contact our AI receptionist right away for urgent dental care.</p>
     </details>
     <details>
-      <summary>What payment methods do you accept?<span class="tick">+</span></summary>
+      <summary>What payment methods do you accept? <span style="color:var(--gold)">+</span></summary>
       <p>We accept all major credit/debit cards, insurance plans, and flexible payment options.</p>
     </details>
   </div>
@@ -383,8 +310,7 @@ a{color:inherit;text-decoration:none}
   (function (d, t) {
     var g = d.createElement(t),
       s = d.getElementsByTagName(t)[0];
-    g.src =
-      "https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js";
+    g.src = "https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js";
     g.defer = true;
     g.async = true;
     s.parentNode.insertBefore(g, s);
@@ -397,7 +323,28 @@ a{color:inherit;text-decoration:none}
       });
     };
   })(document, "script");
+
+  function submitReview(event) {
+    event.preventDefault();
+    const name = document.getElementById('reviewerName').value;
+    const text = document.getElementById('reviewerText').value;
+
+    const reviewsList = document.getElementById('reviewsList');
+    const newCard = document.createElement('div');
+    newCard.className = 'review-card';
+    newCard.innerHTML = `
+      <p>"${text}"</p>
+      <h4>${name}</h4>
+      <div class="review-stars">★★★★★</div>
+    `;
+    reviewsList.prepend(newCard);
+
+    document.getElementById('reviewerName').value = '';
+    document.getElementById('reviewerText').value = '';
+    alert('Thank you! Your review has been added successfully.');
+  }
 </script>
 
 </body>
 </html>
+  
