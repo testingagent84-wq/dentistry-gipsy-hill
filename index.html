@@ -60,7 +60,7 @@ a{color:inherit;text-decoration:none}
 .tl-time{font-family:var(--serif);font-size:18px;color:var(--gold);margin-bottom:4px;display:block}
 .tl-name{font-family:var(--serif);font-size:22px;font-weight:600}
 .tl-note{font-style:italic;color:var(--dim);font-size:16px;margin-top:2px}
-/* LOCATION */
+  /* LOCATION */
 .travel{background:var(--sagedeep);color:var(--cream);padding:70px var(--gap)}
 .travel h2{font-family:var(--serif);font-size:36px;margin-bottom:20px;text-transform:uppercase}
 .travel .addr{font-style:italic;color:rgba(242,238,228,.9);margin-bottom:15px;font-size:18px}
@@ -79,7 +79,7 @@ a{color:inherit;text-decoration:none}
 .review-form-box h3{font-family:var(--serif);font-size:22px;margin-bottom:15px;text-align:center}
 .form-group{margin-bottom:15px}
 .form-group label{display:block;font-size:12px;font-family:var(--sans);text-transform:uppercase;letter-spacing:2px;margin-bottom:6px}
-.form-group input, .form-group textarea{width:100%;padding:12px;border:1px solid var(--line);background:var(--cream);font-size:16px;border-radius:4px}
+.form-group input, .form-group textarea, .form-group select{width:100%;padding:12px;border:1px solid var(--line);background:var(--cream);font-size:16px;border-radius:4px}
 .form-group textarea{height:90px}
 
 /* FAQ */
@@ -213,6 +213,16 @@ a{color:inherit;text-decoration:none}
         <input type="text" id="reviewerName" placeholder="e.g. John Doe" required>
       </div>
       <div class="form-group">
+        <label>Rating (Stars)</label>
+        <select id="reviewerRating">
+          <option value="★★★★★">5 Stars (★★★★★)</option>
+          <option value="★★★★☆">4 Stars (★★★★☆)</option>
+          <option value="★★★☆☆">3 Stars (★★★☆☆)</option>
+          <option value="★★☆☆☆">2 Stars (★★☆☆☆)</option>
+          <option value="★☆☆☆☆">1 Star (★☆☆☆☆)</option>
+        </select>
+      </div>
+      <div class="form-group">
         <label>Your Review</label>
         <textarea id="reviewerText" placeholder="Write your experience..." required></textarea>
       </div>
@@ -277,6 +287,7 @@ a{color:inherit;text-decoration:none}
   function submitReview(event) {
     event.preventDefault();
     const name = document.getElementById('reviewerName').value;
+    const rating = document.getElementById('reviewerRating').value;
     const text = document.getElementById('reviewerText').value;
 
     const reviewsList = document.getElementById('reviewsList');
@@ -285,7 +296,7 @@ a{color:inherit;text-decoration:none}
     newCard.innerHTML = `
       <p>"${text}"</p>
       <h4>${name}</h4>
-      <div class="review-stars">★★★★★</div>
+      <div class="review-stars">${rating}</div>
     `;
     reviewsList.prepend(newCard);
 
@@ -297,4 +308,4 @@ a{color:inherit;text-decoration:none}
 
 </body>
 </html>
-
+  
